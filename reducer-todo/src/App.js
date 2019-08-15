@@ -9,7 +9,7 @@ function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const addNew = todo => {
-    dispatch({type: 'ADD_TODO', payload: 'todo'});
+    dispatch({type: 'ADD_TODO', payload: todo});
   };
 
   const toggle = id => {

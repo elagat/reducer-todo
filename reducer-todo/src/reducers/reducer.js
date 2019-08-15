@@ -1,5 +1,3 @@
-import React, { useReducer } from 'react';
-
 export const initialState = {
   todos: [
     {
@@ -16,7 +14,7 @@ export const reducer = (state, action) => {
       return {
         ...state,
         todos: [...state.todos, action.payload]
-      }
+      };
     case 'TOGGLE_COMPLETE':
       return {
         ...state,
