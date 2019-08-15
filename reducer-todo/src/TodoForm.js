@@ -1,12 +1,5 @@
 import React, { useReducer, useState } from 'react';
 
-const handleInput = event => {
-  setInput({
-    ...input,
-    item: event.targe.value
-  });
-};
-
 const TodoForm = props => {
 
   const [input, setInput] = useState({
@@ -14,6 +7,13 @@ const TodoForm = props => {
     completed: false,
     id: Date.now()
   });
+
+  const handleInput = event => {
+    setInput({
+      ...input,
+      item: event.targe.value
+    });
+  };
 
   return (
     <div>

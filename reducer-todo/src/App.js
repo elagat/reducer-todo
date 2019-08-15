@@ -11,7 +11,9 @@ function App() {
   return (
     <div className="App">
       <TodoForm />
-      <TodoList />
+      <TodoList
+        items={state.todos}
+      />
     </div>
   );
 }
