@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from 'react';
+import React, { useState } from 'react';
 
 const TodoForm = props => {
 
@@ -11,13 +11,24 @@ const TodoForm = props => {
   const handleInput = event => {
     setInput({
       ...input,
-      item: event.target.value
+      item: event.target.value,
+      id: Date.now()
+    });
+  };
+
+  const addTodo =  event => {
+    event.preventDefault();
+    props.addTodo(input);
+    setInput({
+      item: '',
+      completed: false,
+      id: null
     });
   };
 
   return (
     <div>
-      <form>
+      <form onSubmit={addTodo}>
         <input
           value={input.item}
           onChange={handleInput}

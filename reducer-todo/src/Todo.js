@@ -6,7 +6,7 @@ const Todo = props => {
     <div>
       <h3>Todo 1</h3>
       <div>
-        <button onClick={() => props.delete(props.todo.id)}>Delete</button>
+        <button onClick={() => props.deleteTodo(props.todo.id)}>Delete</button>
       </div>
     </div>
   );

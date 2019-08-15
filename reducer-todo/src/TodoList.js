@@ -9,6 +9,7 @@ const TodoList = props => {
       {props.items.map(item => (
         <Todo todo={item} />
       ))}
+      <button onClick={props.clear}>Clear Completed</button>
     </div>
   );
 };
