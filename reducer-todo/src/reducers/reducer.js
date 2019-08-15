@@ -4,9 +4,16 @@ export const initialState = {
   item: 'Learn about reducers',
   completed: false,
   id: 3892987589
-}
+};
 
 export function reducer(state, action) {
-  default:
-    return state
-}
+  switch (action.type) {
+    case 'ADD_TODO':
+      return {
+        ...state,
+        todos: [...state.todos, action.payload]
+      }
+    default:
+      return state
+  }
+} 

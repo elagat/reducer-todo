@@ -1,10 +1,4 @@
-import React, { useReducer } from 'react';
-
-const [input, setinput] = useState({
-  item: 'Learn about reducers',
-  completed: false,
-  id: Date.now()
-});
+import React, { useReducer, useState } from 'react';
 
 const handleInput = event => {
   setInput({
@@ -14,6 +8,12 @@ const handleInput = event => {
 };
 
 const TodoForm = props => {
+
+  const [input, setInput] = useState({
+    item: 'Learn about reducers',
+    completed: false,
+    id: Date.now()
+  });
 
   return (
     <div>
