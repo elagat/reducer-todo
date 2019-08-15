@@ -8,12 +8,17 @@ import './App.css';
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  const addNew = todo => {
+    dispatch({type: 'ADD_TODO', payload: 'test'})
+  };
+
   return (
     <div className="App">
-      <TodoForm />
+      <TodoForm addtodo={addNew}/>
       <TodoList
         items={state.todos}
       />
+      <button onClick={addNew}>Add New</button>
     </div>
   );
 }

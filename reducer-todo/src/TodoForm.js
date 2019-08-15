@@ -3,15 +3,15 @@ import React, { useReducer, useState } from 'react';
 const TodoForm = props => {
 
   const [input, setInput] = useState({
-    item: 'Learn about reducers',
+    item: '',
     completed: false,
-    id: Date.now()
+    id: null
   });
 
   const handleInput = event => {
     setInput({
       ...input,
-      item: event.targe.value
+      item: event.target.value
     });
   };
 
@@ -23,6 +23,7 @@ const TodoForm = props => {
           onChange={handleInput}
           type='text'
         />
+        <button>Add todo</button>
       </form>
     </div>
   );
