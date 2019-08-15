@@ -1,12 +1,18 @@
 import React from 'react';
+import './App.css';
 
 const Todo = props => {
 
   return (
     <div>
-      <h3>Todo 1</h3>
+      <h3
+        className={props.todo.completed ? 'strike': null}
+        onClick={() => props.toggle(props.todo.id)}
+        >
+        {props.todo.item}
+      </h3>
       <div>
-        <button onClick={() => props.deleteTodo(props.todo.id)}>Delete</button>
+        <button onClick={() => props.delete(props.todo.id)}>Delete</button>
       </div>
     </div>
   );

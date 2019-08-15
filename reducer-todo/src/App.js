@@ -22,7 +22,7 @@ function App() {
 
   const deleteTodo = id => {
     dispatch({type: 'DELETE_TODO', payload: id});
-  }
+  };
 
   return (
     <div className="App">

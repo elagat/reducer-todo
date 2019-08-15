@@ -16,7 +16,7 @@ const TodoForm = props => {
     });
   };
 
-  const addTodo =  event => {
+  const addTodo = event => {
     event.preventDefault();
     props.addTodo(input);
     setInput({

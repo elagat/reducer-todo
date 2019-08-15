@@ -17,7 +17,26 @@ export const reducer = (state, action) => {
         ...state,
         todos: [...state.todos, action.payload]
       }
+    case 'TOGGLE_COMPLETE':
+      return {
+        ...state,
+        todos: state.todos.map(todo =>
+          todo.id === action.payload
+            ? {...todo, completed: !todo.completed}
+            : todo
+        )
+      };
+    case 'CLEAR_COMPLETE':
+      return {
+        ...state,
+        todos: state.todos.filter(todo => !todo.completed)
+      };
+    case 'DELETE_TODO':
+      return {
+        ...state,
+        todos: state.todos.filter(todo => todo.id !== action.payload)
+      };
     default:
       return state
   }
-}
+};
